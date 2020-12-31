@@ -42,7 +42,7 @@ type Logger struct {
 }
 
 // New returns new `lambdalog.Logger` that sends log events to a zap.Logger.
-func New(name string, ctx lambdacontext.LambdaContext) (*Logger, error) {
+func New(name string, ctx *lambdacontext.LambdaContext) (*Logger, error) {
 	logger, err := zap.NewProduction()
 	if err != nil {
 		return nil, err
